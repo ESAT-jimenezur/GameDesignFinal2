@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Movement_Elements : MonoBehaviour {
-
+public class Movement_Elements_Horizontal : MonoBehaviour {
+	
 	private bool up;
 	private bool down;
 	public float range;
 	int tmp_rand_Value;
 	float init_pos;
-
-
+	
+	
 	// Use this for initialization
 	void Start () {
 		tmp_rand_Value = Random.Range(0, 2);
@@ -24,10 +24,10 @@ public class Movement_Elements : MonoBehaviour {
 	}
 	
 	void MoveElements() {
-		if (transform.position.y >= init_pos+range) {
+		if (transform.position.x >= init_pos+range) {
 			down = true;
 			up= false;
-		} else if (transform.position.y <= (init_pos+(range*-1))) {
+		} else if (transform.position.x <= (init_pos+(range*-1))) {
 			down = false;
 			up= true;
 		}
@@ -41,10 +41,10 @@ public class Movement_Elements : MonoBehaviour {
 	
 	// Update is called once per frame
 	void MoveUp(){
-		transform.Translate(Vector3.up/30);
+		transform.Translate(Vector3.left/30);
 	}
 	void MoveDown() {
-		transform.Translate (Vector3.down/30);
+		transform.Translate (Vector3.right/30);
 	}
 	
 	void Update () {
