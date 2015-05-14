@@ -16,10 +16,8 @@ public class collectible_object : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Debug.Log ("Trigger Enter");
 		if (other.gameObject.name == "Player 1") {
-			Debug.Log ("IF");
-			Debug.Log (other.gameObject.name);
+			Level1.collected_blue_objects++;
 			Destroy (gameObject);
 		}
 	}
