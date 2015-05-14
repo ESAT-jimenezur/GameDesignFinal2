@@ -8,6 +8,7 @@ public class player_movement : MonoBehaviour {
 	public int player_number = 0;
 	Rigidbody rb;
 	bool ground;
+	bool jumpdone;
 	bool jump2done;
 
 	// Use this for initialization
@@ -46,7 +47,10 @@ public class player_movement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-
+		if (other.tag == "Ground") {
+			ground = true;
+			jumpdone = jump2done = false;
+		}
 	}
 
 	void moveRight(){
@@ -57,6 +61,13 @@ public class player_movement : MonoBehaviour {
 		transform.Translate (Vector3.left * speed * Time.deltaTime);
 	}
 	void jump(){
-		rb.velocity = new Vector3(0, jump_speed, 0);
+		if (ground && !jump2done && !jumpdone) {
+			rb.velocity = new Vector3 (0, jump_speed, 0);
+			jumpdone = true;
+		}
+		else if(jumpdone && !jump2done){
+			rb.velocity = new Vector3 (0, jump_speed, 0);
+			jump2done = true;
+		}
 	}
 }
