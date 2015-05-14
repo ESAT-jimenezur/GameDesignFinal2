@@ -49,7 +49,6 @@ public class Level1 : MonoBehaviour {
 		    collected_red_objects >= total_red_objects) {
 			Destroy (door);
 		}
-		Debug.Log (collected_blue_objects);
 	}
 	
 }
