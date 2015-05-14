@@ -6,9 +6,8 @@ public class player_movement : MonoBehaviour {
 	float speed = 5.0f;
 	float jump_speed = 5.0f;
 	public int player_number = 0;
-
 	Rigidbody rb;
-	
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -16,12 +15,7 @@ public class player_movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//LineRenderer lineRenderer = GetComponent<LineRenderer>();
-		//lineRenderer.SetPosition(0, transform.position);
-		//lineRenderer.SetPosition(1, Input.mousePosition);
-		
 		playerMovement();
-		
 	}
 	
 	
@@ -33,14 +27,17 @@ public class player_movement : MonoBehaviour {
 			}else if(Input.GetKey(KeyCode.A)){
 				moveLeft();
 			}
-			if (Input.GetKeyDown ("space")){
-				rb.velocity = new Vector3(0, jump_speed, 0);
+			if (Input.GetKeyDown (KeyCode.W)){
+				jump ();
 			} 
 		} else if (player_number == 2) {
 			if (Input.GetKey(KeyCode.RightArrow)){
 				moveRight();
 			}else if(Input.GetKey(KeyCode.LeftArrow)){
 				moveLeft();
+			}
+			if (Input.GetKeyDown (KeyCode.UpArrow)){
+				jump ();
 			}
 		}
 		
@@ -52,5 +49,8 @@ public class player_movement : MonoBehaviour {
 	
 	void moveLeft(){
 		transform.Translate (Vector3.left * speed * Time.deltaTime);
+	}
+	void jump(){
+		rb.velocity = new Vector3(0, jump_speed, 0);
 	}
 }
