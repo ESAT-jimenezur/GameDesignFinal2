@@ -4,6 +4,7 @@ using System.Collections;
 
 public class collectible_object : MonoBehaviour {
 
+	public int collectible_by_player_n = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +17,19 @@ public class collectible_object : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.name == "Player 1") {
-			Level1.collected_blue_objects++;
-			Destroy (gameObject);
+
+		if(collectible_by_player_n == 1){
+			if (other.gameObject.name == "Player 1") {
+				Level1.collected_blue_objects++;
+				Destroy (gameObject);
+			}
+		}else if(collectible_by_player_n == 2){
+			if (other.gameObject.name == "Player 2") {
+				Level1.collected_red_objects++;
+				Destroy (gameObject);
+			}
 		}
+
 	}
 
 

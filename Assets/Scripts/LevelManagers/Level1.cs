@@ -5,8 +5,8 @@ public class Level1 : MonoBehaviour {
 	
 	private static Level1 _instance;
 
-	public int total_red_objects = 0;
-	public int total_blue_objects = 1;
+	public int total_red_objects = 3;
+	public int total_blue_objects = 3;
 
 	public static int collected_red_objects = 0;
 	public static int collected_blue_objects = 0;
@@ -49,6 +49,7 @@ public class Level1 : MonoBehaviour {
 		    collected_red_objects >= total_red_objects) {
 			Destroy (door);
 		}
+		Debug.Log (collected_blue_objects);
 	}
 	
 }
