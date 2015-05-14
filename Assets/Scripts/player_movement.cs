@@ -7,6 +7,8 @@ public class player_movement : MonoBehaviour {
 	float jump_speed = 5.0f;
 	public int player_number = 0;
 	Rigidbody rb;
+	bool ground;
+	bool jump2done;
 
 	// Use this for initialization
 	void Start () {
@@ -42,7 +44,11 @@ public class player_movement : MonoBehaviour {
 		}
 		
 	}
-	
+
+	void OnTriggerEnter(Collider other){
+
+	}
+
 	void moveRight(){
 		transform.Translate (Vector3.right * speed * Time.deltaTime);
 	}
