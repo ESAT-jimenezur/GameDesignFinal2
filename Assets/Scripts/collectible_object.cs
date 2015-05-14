@@ -15,7 +15,7 @@ public class collectible_object : MonoBehaviour {
 
 	}
 
-	void onTriggerEnter(GameObject other){
+	void OnTriggerEnter(Collider other){
 		Debug.Log ("Trigger Enter");
 		if (other.gameObject.name == "Player 1") {
 			Debug.Log ("IF");
