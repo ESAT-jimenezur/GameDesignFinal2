@@ -5,7 +5,7 @@ using System.Collections;
 
 public class red_collectible_object : MonoBehaviour {
 	
-	// Use this for initialization
+	// Use this for initializations
 	void Start () {
 		
 	}
