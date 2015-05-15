@@ -7,8 +7,8 @@ public class LevelManager : MonoBehaviour {
 
 	public int level_number = 0;
 
-	public int total_red_objects = 3;
-	public int total_blue_objects = 3;
+	public int total_red_objects = 6;
+	public int total_blue_objects = 6;
 
 	public static int collected_red_objects = 0;
 	public static int collected_blue_objects = 0;
@@ -49,8 +49,10 @@ public class LevelManager : MonoBehaviour {
 
 	
 	void Update(){
-		if (collected_blue_objects >= total_blue_objects && 
-		    collected_red_objects >= total_red_objects) {
+		if (collected_blue_objects >= total_blue_objects) {
+			Destroy (door);
+		}
+		if (collected_red_objects >= total_red_objects) {
 			Destroy (door);
 		}
 	}
