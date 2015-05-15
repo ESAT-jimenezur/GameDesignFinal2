@@ -6,6 +6,7 @@ public class Movement_Elements : MonoBehaviour {
 	private bool up;
 	private bool down;
 	public float range;
+	public bool movement_enabled = true;
 	int tmp_rand_Value;
 	float init_pos;
 
@@ -48,8 +49,10 @@ public class Movement_Elements : MonoBehaviour {
 	}
 	
 	void Update () {
-		
-		MoveElements ();
+		if (movement_enabled) {
+			MoveElements ();
+		}
+	
 	}
 	
 }

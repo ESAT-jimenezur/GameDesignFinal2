@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Level1 : MonoBehaviour {
+public class LevelManager : MonoBehaviour {
 	
-	private static Level1 _instance;
+	private static LevelManager _instance;
+
+	public int level_number = 0;
 
 	public int total_red_objects = 3;
 	public int total_blue_objects = 3;
@@ -13,18 +15,18 @@ public class Level1 : MonoBehaviour {
 
 	GameObject door;
 	
-	public static Level1 instance{
+	public static LevelManager instance{
 		get{
 			
 			if(_instance == null){
-				_instance = GameObject.FindObjectOfType<Level1>();
+				_instance = GameObject.FindObjectOfType<LevelManager>();
 			}
 			return _instance;
 		}
 	}
 	
 	public static void init(){
-		Debug.Log ("Level Manager Started --Level 1--");
+		Debug.Log ("** Level Manager Started ***");
 	}
 	
 	void Awake () {
@@ -32,6 +34,8 @@ public class Level1 : MonoBehaviour {
 			_instance = this;
 			init ();
 
+			collected_blue_objects = 0;
+			collected_red_objects = 0;
 			door = GameObject.Find ("Door");
 
 		}else{
@@ -50,5 +54,12 @@ public class Level1 : MonoBehaviour {
 			Destroy (door);
 		}
 	}
-	
+
+	public static int getCollectedBlueObjects(){
+		return collected_blue_objects;
+	}
+
+	public static int getCollectedRedObjects(){
+		return collected_red_objects;
+	}
 }

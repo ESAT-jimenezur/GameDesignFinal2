@@ -4,7 +4,7 @@ using System.Collections;
 public class player_movement : MonoBehaviour {
 
 	float speed = 5.0f;
-	float jump_speed = 5.0f;
+	float jump_speed = 6.0f;
 	public int player_number = 0;
 	Rigidbody rb;
 	bool ground;

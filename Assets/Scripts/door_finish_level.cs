@@ -25,8 +25,10 @@ public class door_finish_level : MonoBehaviour {
 	}
 
 
-	void Update(){
+	void FixedUpdate(){
+		Debug.Log ("A" + LevelManager.getCollectedBlueObjects());
 		if(player_blue_inside && player_red_inside){
+
 			Application.LoadLevel(0);
 		}
 	}
