@@ -20,7 +20,7 @@ public class Movement_Elements_Horizontal : MonoBehaviour {
 			up = false;
 			down = true;
 		}
-		init_pos = transform.position.y;
+		init_pos = transform.position.x;
 	}
 	
 	void MoveElements() {
@@ -41,10 +41,10 @@ public class Movement_Elements_Horizontal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void MoveUp(){
-		transform.Translate(Vector3.left/30);
+		transform.Translate(Vector3.right/30);
 	}
 	void MoveDown() {
-		transform.Translate (Vector3.right/30);
+		transform.Translate (Vector3.left/30);
 	}
 	
 	void Update () {
