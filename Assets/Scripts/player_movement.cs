@@ -51,6 +51,10 @@ public class player_movement : MonoBehaviour {
 			ground = true;
 			jumpdone = jump2done = false;
 		}
+		if (other.tag == "Player") {
+			ground = true;
+			jumpdone = jump2done = false;
+		}
 	}
 
 	void moveRight(){
