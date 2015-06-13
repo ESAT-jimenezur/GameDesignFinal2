@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
-using UnityEngine;
 using System.Collections;
 
 public class red_collectible_object : MonoBehaviour {

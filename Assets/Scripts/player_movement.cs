@@ -25,22 +25,23 @@ public class player_movement : MonoBehaviour {
 	void playerMovement(){
 		
 		if (player_number == 1) {
+			if (Input.GetKeyDown (KeyCode.W)){
+				jump ();
+			} 
 			if (Input.GetKey(KeyCode.D)){
 				moveRight();
 			}else if(Input.GetKey(KeyCode.A)){
 				moveLeft();
 			}
-			if (Input.GetKeyDown (KeyCode.W)){
-				jump ();
-			} 
 		} else if (player_number == 2) {
-			if (Input.GetKey(KeyCode.RightArrow)){
-				moveRight();
-			}else if(Input.GetKey(KeyCode.LeftArrow)){
-				moveLeft();
-			}
 			if (Input.GetKeyDown (KeyCode.UpArrow)){
 				jump ();
+			}
+			if (Input.GetKey(KeyCode.RightArrow)){
+				moveRight();
+			}
+			else if(Input.GetKey(KeyCode.LeftArrow)){
+				moveLeft();
 			}
 		}
 		
